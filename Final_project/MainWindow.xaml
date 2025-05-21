@@ -10,9 +10,9 @@
         ResizeMode = "NoResize"
         Background = "Transparent"
         AllowsTransparency = "True">
-    
-    <Border Background="{StaticResource OffWhiteBrush}"
-            BorderBrush="{StaticResource BorderGrayBrush}"
+
+    <Border Background="#FFF8F9FA"
+            BorderBrush="#FFE0E0E0"
             BorderThickness="1"
             CornerRadius="20">
         <Grid>
@@ -30,24 +30,24 @@
             <TextBlock Text="Elysium"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Foreground="{StaticResource HighlightBlueBrush}"
+                   Foreground="#FF2196F3"
                    FontSize="22"
                    Margin="20,0,0,0"/>
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
-                             Foreground="{StaticResource DarkGrayBrush}"
+                             Foreground="#FF808080"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
                 <RadioButton Content="Discovery"
                              Height="50"
-                             Foreground="{StaticResource DarkGrayBrush}"
+                             Foreground="#FF808080"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
 
                 <RadioButton Content="Featured"
                              Height="50"
-                             Foreground="{StaticResource DarkGrayBrush}"
+                             Foreground="#FF808080"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
 
@@ -61,9 +61,7 @@
                      Grid.Column="1"
                      Style="{StaticResource ModernTextBox}"/>
 
-            <ContentControl Grid.Row="1"
-                            Grid.Column="1"
-                            Margin="10"/>
+ 
         </Grid>
 
 

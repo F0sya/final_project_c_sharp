@@ -17,17 +17,17 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Background" Value="{StaticResource OffWhiteBrush}"/>
+        <Setter Property="Background" Value="#FFF8F9FA"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Foreground" Value="{StaticResource DarkGrayBrush}"/>
+        <Setter Property="Foreground" Value="#FF808080"/>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="{StaticResource BlueAccentBrush}"/>
+                <Setter Property="Background" Value="#FF4FC3F7"/>
                 <Setter Property="Foreground" Value="#FFFFFFFF"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource SkyBlueBrush}"/>
-                <Setter Property="Foreground" Value="{StaticResource HighlightBlueBrush}"/>
+                <Setter Property="Background" Value="#FF87CEEB"/>
+                <Setter Property="Foreground" Value="#FF2196F3"/>
             </Trigger>
         </Style.Triggers>
     </Style>
