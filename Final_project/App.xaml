@@ -2,6 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Final_project"
+             xmlns:viewModel="clr-namespace:Final_project_wpf.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Final_project_wpf.MVVM.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,6 +13,10 @@
                 <ResourceDictionary Source="Theme/MenuButtonsTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/TextBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:TranslatorViewModel}">
+                <view:TranslatorView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

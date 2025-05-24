@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Final_project_wpf.Core
 {
-    internal class ObservableObject
+    class ObservableObject
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string Name = null)

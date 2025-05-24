@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Final_project_wpf.Core
 {
-    internal class RelayCommand
+    class RelayCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;

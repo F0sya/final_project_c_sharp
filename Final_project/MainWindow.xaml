@@ -3,14 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Final_project_wpf.MVVM.ViewModel"
         xmlns:local="clr-namespace:Final_project"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
-        WindowStyle = "None"
-        ResizeMode = "NoResize"
-        Background = "Transparent"
-        AllowsTransparency = "True">
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
 
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Border Background="#FFF8F9FA"
             BorderBrush="#FFE0E0E0"
             BorderThickness="1"
@@ -27,7 +31,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Elysium"
+            <TextBlock Text="translAItor"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
                    Foreground="#FF2196F3"
@@ -39,7 +43,13 @@
                              Foreground="#FF808080"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
-                <RadioButton Content="Discovery"
+                <RadioButton Content="Translator"
+                             Height="50"
+                             Foreground="#FF808080"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonsTheme}"/>
+
+                <RadioButton Content="Featured"
                              Height="50"
                              Foreground="#FF808080"
                              FontSize="14"
@@ -61,7 +71,13 @@
                      Grid.Column="1"
                      Style="{StaticResource ModernTextBox}"/>
 
- 
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+
+
         </Grid>
 
 
