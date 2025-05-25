@@ -4,13 +4,13 @@
              xmlns:local="clr-namespace:Final_project"
              xmlns:viewModel="clr-namespace:Final_project_wpf.MVVM.ViewModel"
              xmlns:view="clr-namespace:Final_project_wpf.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginPage.xaml">
     <Application.Resources>
         <ResourceDictionary>
 
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/MenuButtonsTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/MenuButtonsTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/TextBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 

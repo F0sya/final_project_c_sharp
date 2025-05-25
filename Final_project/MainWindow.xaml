@@ -15,10 +15,13 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Border Background="#FFF8F9FA"
-            BorderBrush="#FFE0E0E0"
-            BorderThickness="1"
-            CornerRadius="20">
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="White" Offset="0.0"/>
+                <GradientStop Color="#2575fc" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -37,29 +40,32 @@
                    Foreground="#FF2196F3"
                    FontSize="22"
                    Margin="20,0,0,0"/>
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                 <RadioButton Content="Home"
                              Height="50"
+                             Width="200"
                              Foreground="#FF808080"
                              FontSize="14"
+                             Margin="0,0,10,0"
                              Style="{StaticResource MenuButtonsTheme}"/>
                 <RadioButton Content="Translator"
                              Height="50"
+                             Width="200"
                              Foreground="#FF808080"
+                             Margin="0,0,10,0"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
 
                 <RadioButton Content="Featured"
                              Height="50"
+                             Width="200"
+                             
                              Foreground="#FF808080"
                              FontSize="14"
                              Style="{StaticResource MenuButtonsTheme}"/>
 
-                <RadioButton Content="Featured"
-                             Height="50"
-                             Foreground="#FF808080"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonsTheme}"/>
 
             </StackPanel>
 
