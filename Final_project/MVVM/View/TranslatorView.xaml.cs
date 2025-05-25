@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Final_project_wpf.Core;
 
 namespace Final_project_wpf.MVVM.View
 {
@@ -24,5 +25,22 @@ namespace Final_project_wpf.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void TranslateButton_Click(object sender, RoutedEventArgs e)
+        {
+            string enteredText = InputTextBox.Text;
+            try
+            {
+                TranslatorService translatorService = new TranslatorService();
+                string translatedText = translatorService.TranslateText(enteredText, "en");
+                OutputTextBox.Text = translatedText;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while translating: {ex.Message}");
+            }
+        }
+
+
     }
 }
