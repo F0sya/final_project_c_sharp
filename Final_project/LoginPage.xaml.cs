@@ -29,6 +29,14 @@ namespace Final_project
             this.Close();
         }
 
+        private void StartRegisterCommand(object sender, MouseButtonEventArgs e)
+        {
+            var registerWindow = new RegisterPage();
+            registerWindow.Show();
+
+            this.Close();
+        }
+
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

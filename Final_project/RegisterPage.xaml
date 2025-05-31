@@ -1,4 +1,5 @@
 ﻿<Window x:Class="Final_project.RegisterPage"
+
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -80,10 +81,9 @@
                                    Foreground="#AAFFFFFF" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,15,0,0"
-                                   Cursor="Hand">
-                            <TextBlock.InputBindings>
-                                <MouseBinding Gesture="LeftClick" Command="{Binding StartRegisterWindow}"/>
-                            </TextBlock.InputBindings>
+                                   Cursor="Hand"
+                                   MouseDown="StartLoginCommand">
+                            
                         </TextBlock>
                     </StackPanel>
                 </Border>

@@ -64,15 +64,13 @@
                                 FontWeight="SemiBold"
                                 Click="LoginButton_Click"/>
 
-                        
+
                         <TextBlock Text="Don't have an account? Register" 
                                    Foreground="#AAFFFFFF" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,15,0,0"
-                                   Cursor="Hand">
-                            <TextBlock.InputBindings>
-                                <MouseBinding Gesture="LeftClick" Command="{Binding RegisterCommand}"/>
-                            </TextBlock.InputBindings>
+                                   Cursor="Hand"
+                                   MouseDown="StartRegisterCommand">
                         </TextBlock>
                     </StackPanel>
                 </Border>

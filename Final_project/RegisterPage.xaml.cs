@@ -19,15 +19,35 @@ namespace Final_project
         public RegisterPage()
         {
             InitializeComponent();
-
         }
 
         private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            
             var mainWindow = new MainWindow();
-            mainWindow.Show();
+            var service = App.SupabaseService;
+            if (PasswordBox.Password == PasswordConfirmBox.Password)
+            {
+                await service.RegisterUserAsync(UsernameTextBox.Text, PasswordBox.Password);
+                MessageBox.Show("Registration successful! You can now log in.");
+                var LoginWindow = new LoginPage();
+                LoginWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match. Please try again.");
+                return;
+            }
+        }
+        private void StartLoginCommand(object sender, MouseButtonEventArgs e)
+        {
+            var loginWindow = new LoginPage();
+            loginWindow.Show();
+
             this.Close();
         }
+
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
