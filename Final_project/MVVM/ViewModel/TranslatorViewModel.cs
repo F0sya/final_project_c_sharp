@@ -47,7 +47,7 @@ namespace Final_project_wpf.MVVM.ViewModel
 
             try
             {
-                OutputText = _translatorService.TranslateText(InputText,"uk");
+                OutputText = _translatorService.TranslateText(InputText, "uk");
             }
             catch (Exception ex)
             {

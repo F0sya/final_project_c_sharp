@@ -39,8 +39,43 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <Style x:Key="MenuButtonDefault" TargetType="Button">
+    <Setter Property="Background" Value="#2575fc"/>
+    <Setter Property="Foreground" Value="White"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Padding" Value="20,10"/>
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                <Border x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      RecognizesAccessKey="True"/>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="border" Property="Background" Value="#1a5edb"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter TargetName="border" Property="Background" Value="#174db3"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter TargetName="border" Property="Background" Value="#B0B0B0"/>
+                        <Setter Property="Foreground" Value="#EEEEEE"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
 
-    <!-- Separator Style -->
     <Style x:Key="MenuSeparator" TargetType="Rectangle">
         <Setter Property="Width" Value="1"/>
         <Setter Property="Fill" Value="#E0E0E0"/>

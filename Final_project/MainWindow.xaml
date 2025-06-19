@@ -15,6 +15,7 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
+    
     <Border CornerRadius="20">
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -43,31 +44,26 @@
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left">
-                <RadioButton Content="Home"
+
+
+                <RadioButton Content="Translator"
                              Height="50"
                              IsChecked="True"
                              Width="150"
                              Foreground="#FF808080"
-                             FontSize="14"
-                             Margin="0,0,15,0"
-                             Style="{StaticResource MenuButtonsTheme}"/>
-                <Rectangle Style="{StaticResource MenuSeparator}"/>
-                <RadioButton Content="Translator"
-                             Height="50"
-                             Width="150"
-                             Foreground="#FF808080"
                              Margin="0,0,15,0"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonsTheme}"/>
+                             Style="{StaticResource MenuButtonsTheme}"
+                             Command="{Binding TranslatorViewCommand}"/>
                 <Rectangle Style="{StaticResource MenuSeparator}"/>
 
-                <RadioButton Content="Featured"
+                <RadioButton Content="Flashcards"
                              Height="50"
                              Width="150"
-                             
                              Foreground="#FF808080"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonsTheme}"/>
+                             Style="{StaticResource MenuButtonsTheme}"
+                             Command="{Binding FlashcardsViewCommand}"/>
 
                 
 

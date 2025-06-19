@@ -4,9 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Final_project"
              xmlns:viewModel="clr-namespace:Final_project_wpf.MVVM.ViewModel"
-             xmlns:view="clr-namespace:Final_project_wpf.MVVM.View"
-             StartupUri="LoginPage.xaml">
+             xmlns:view="clr-namespace:Final_project_wpf.MVVM.View">
     <Application.Resources>
+        
         <ResourceDictionary>
 
 
@@ -18,6 +18,13 @@
             <DataTemplate DataType="{x:Type viewModel:TranslatorViewModel}">
                 <view:TranslatorView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FlashcardsViewModel}">
+                <view:FlashcardsView/>
+            </DataTemplate>
+            
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

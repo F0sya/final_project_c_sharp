@@ -25,6 +25,11 @@ namespace Final_project
         {
             this.Close();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -23,4 +23,3 @@ namespace Final_project_wpf.Core
         }
     }
 }
-

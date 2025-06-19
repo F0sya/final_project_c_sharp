@@ -36,14 +36,6 @@
                 <Border CornerRadius="10" Background="#22000000" Padding="20">
                     <StackPanel>
 
-                        <TextBlock Text="Username" Foreground="White" Margin="0,0,0,5"/>
-                        <TextBox x:Name="UsernameTextBox" 
-                                 Background="#33000000" 
-                                 Foreground="White" 
-                                 BorderBrush="#55FFFFFF" 
-                                 BorderThickness="1" 
-                                 Padding="10,8" 
-                                 Margin="0,0,0,15"/>
 
                         <TextBlock Text="Email" Foreground="White" Margin="0,0,0,5"/>
                         <TextBox x:Name="EmailTextBox" 

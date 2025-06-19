@@ -1,39 +1,50 @@
-﻿using System.Text;
+﻿
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Final_project_wpf.Core.Auth;
 
 namespace Final_project
 {
-    /// <summary>  
-    /// Interaction logic for LoginPage.xaml  
-    /// </summary>  
     public partial class LoginPage : Window
     {
-        public LoginPage()
+        private readonly AuthService _authService;
+
+        public LoginPage(AuthService authService)
         {
             InitializeComponent();
-
+            _authService = authService;
         }
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            try
+            {
+                var user = await _authService.Login(
+                    EmailTextBox.Text,
+                    PasswordBox.Password
+                );
+
+                if (user != null)
+                {
+                    var mainWindow = App.GetService<MainWindow>();
+                    mainWindow.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email or password. Please try again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void StartRegisterCommand(object sender, MouseButtonEventArgs e)
         {
-            var registerWindow = new RegisterPage();
+            var registerWindow = App.GetService<RegisterPage>();
             registerWindow.Show();
-
             this.Close();
         }
 
