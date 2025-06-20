@@ -5,7 +5,6 @@ using Final_project_wpf.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Final_project_wpf.Core;
 using Final_project_wpf.MVVM.ViewModel;
 
@@ -63,6 +62,8 @@ namespace Final_project
             // Register services
             services.AddSingleton<AuthService>();
             services.AddSingleton<TranslatorService>();
+            services.AddSingleton<SimpleTextGenerator>(provider =>
+     new SimpleTextGenerator("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"));
 
             // Register ViewModels
             services.AddTransient<MainViewModel>();

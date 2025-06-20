@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"      
+             xmlns:conv="clr-namespace:Final_project_wpf.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="Transparent">
 
-
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
 
     <Grid Margin="40">
         <Grid.RowDefinitions>
@@ -26,12 +29,12 @@
                          FontSize="24"
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center"
-                         Visibility="{Binding CurrentCard.IsFlipped, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Reverse}"/>
+                         Visibility="{Binding CurrentCard.IsFlipped, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}" />
                 <TextBlock Text="{Binding CurrentCard.BackText}"
                          FontSize="24"
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center"
-                         Visibility="{Binding CurrentCard.IsFlipped, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                         Visibility="{Binding CurrentCard.IsFlipped, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=True}"/>
             </Grid>
         </Border>
 
@@ -47,6 +50,10 @@
                     Style="{StaticResource MenuButtonDefault}"
                     Content="Flip"
                      Margin="0,0,20,0"/>
+            <Button Command="{Binding GenerateExampleWithAICommand}"
+                    Style="{StaticResource MenuButtonDefault}"
+                    Content="Generate example(AI)"
+                    Margin="0,0,20,0"/>
             <Button Command="{Binding NextCardCommand}"
                     Style="{StaticResource MenuButtonDefault}"
                     Content="Next"/>

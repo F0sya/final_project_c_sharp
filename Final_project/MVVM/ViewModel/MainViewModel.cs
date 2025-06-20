@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Final_project_wpf.Core;
 using Final_project_wpf.Core.Interfaces;
@@ -33,23 +34,31 @@ namespace Final_project_wpf.MVVM.ViewModel
 
         public MainViewModel()
         {
-            TranslatorVM = new TranslatorViewModel();
-            FlashcardsVM = new FlashcardsViewModel();
-
-            CurrentView = TranslatorVM;
-
-            // Initialize commands
-            TranslatorViewCommand = new RelayCommand(o =>
+            try
             {
+                TranslatorVM = new TranslatorViewModel();
+                FlashcardsVM = new FlashcardsViewModel();
+
                 CurrentView = TranslatorVM;
-                
-            });
 
-            FlashcardsViewCommand = new RelayCommand(o =>
+                // Initialize commands
+                TranslatorViewCommand = new RelayCommand(o =>
+                {
+                    CurrentView = TranslatorVM;
+
+                });
+
+                FlashcardsViewCommand = new RelayCommand(o =>
+                {
+                    CurrentView = FlashcardsVM;
+
+                });
+            }
+            catch (Exception ex)
             {
-                CurrentView = FlashcardsVM;
-                
-            });
+                MessageBox.Show($"MainViewModel error: {ex.Message}");
+                throw;
+            }
         }
     }
 }
